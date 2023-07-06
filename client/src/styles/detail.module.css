@@ -1,0 +1,41 @@
+.detail {
+    background: url("../images/paises2.jpg" );
+    min-height: 85.5vh;
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 500px;
+      margin:  auto;
+  }
+  
+  .flag {
+      display: flex;
+      width: 60%;
+      margin-top: 10px;
+      
+  }
+  
+  .info {
+      display: flex;
+      align-items: start;
+      gap: 50px;
+      background-color: rgb(12, 3, 20);
+      opacity: 0.9;
+      padding: 60px;
+      margin-top: 20px;
+    }
+  
+  .info:hover{
+      background: rgb(1, 109, 84)
+      
+      
+  }
+  
+  .name {
+      font-size: 3rem;
+      margin-bottom: 10px;
+  }
