@@ -16,12 +16,14 @@ export const SearchBar = connect(null, mapDispatchToProps)(({ onSearch, onSetPag
   };
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
     onSetPage(1); // Restablecer la página a 1 antes de realizar la búsqueda
     onSearch(searchCountryInput).then((response) => {
     }).catch((error) => {
       console.error(error);
     });
+
   };
 
   return (

@@ -15,7 +15,7 @@ export const validate = (data) =>{
 
     // Valida que el nombre de la actividad cumpla con la expresion regular, tenga una longitud mayor a cero y menor a doce caracteres.
     if(regexActivity.test(data.name) && data.name.length > 0 && data.name.length < 12)
-    obj.name = true; 
+    obj.name = true;
 
     // Valida que la dificultad de la actividad sea un nomero mayor a cero y menor o igual a 3.
     if(regexCheckNumber.test(data.difficulty) && data.difficulty > 0 && data.difficulty <= 5)

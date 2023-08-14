@@ -71,19 +71,21 @@ const reducer = (state = initialState, action) => {
                     };
 
         case ORDER:
-            const newOrder = state.country.sort((a, b) => {
-                if(a.id > b.id) {
-                    return "ascendent" === action.payload ? 1 : -1;  // Si la acción es ascendent, se ordena de forma ascendente, de lo contrario, se ordena de forma descendente
-                }
-                if(a.id < b.id) {
-                    return "descendent" === action.payload ? 1 : -1;    // Si la acción es descendent, se ordena de forma descendente, de lo contrario, se ordena de forma ascendente
-                }
-                return 0;
-            })
-            return {
-                ...state,
-                order: newOrder,    // Se actualiza el estado de los países con los países ordenados
-            }
+                const newOrder = state.country.sort((a, b) => {
+                const firstLetterA = a.name.charAt(0).toUpperCase();
+                const firstLetterB = b.name.charAt(0).toUpperCase();
+                    
+                    return firstLetterA.localeCompare(firstLetterB);
+                    });
+                    
+                    if (action.payload === "descendent") {
+                        newOrder.reverse();
+                    }
+                    
+                    return {
+                        ...state,
+                        order: newOrder,
+                    };
 
   
             case POPULATION:

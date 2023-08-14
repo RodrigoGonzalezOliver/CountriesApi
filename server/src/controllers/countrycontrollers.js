@@ -26,6 +26,33 @@ const getApiInfo = async () => {
 	return map;
 };
 
+/*const getApiInfo = async (req, res) => {
+	// Hacemos una peticion a la API
+	try{
+	const response = await axios.get("http://localhost:5000/countries");
+
+	const country = response.data.map((e) => {
+		// Mapeamos la respuesta de la API a un objeto que represente cada pais
+		return {
+			id: e.cca3,
+			name: e.name.common,
+			flag: e.flags.png,
+			continent: e.continents[0],
+			capital: e.capital != null ? e.capital[0] : "No data",
+			subregion: e.subregion,
+			area: e.area,
+			poblation: e.population,
+		};
+		//return country;
+	});
+	res.json(country)
+	// Retornamos el array de paises
+	//res.status(200).json(map)
+}catch (error) {
+		console.log(error)
+	}
+};*/
+
 
 // Funcion asincronica que carga los paises en la base de datos
 const countriesToDb = async () => {
